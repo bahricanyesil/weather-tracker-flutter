@@ -77,30 +77,181 @@ class _SearchScreenState extends State<SearchScreen> {
         var res = await NetworkManager.instance
             .getRequest("https://randomuser.me/api/", 'token');
 
-        for (var i = 0; i < 4; i++) {
-          UserModel user2 = UserModel(
-              res['results'][0]['name']['first'],
-              res['results'][0]['email'],
-              res['results'][0]['location']['state'],
-              res['results'][0]['location']['city'],
-              res['results'][0]['picture']['medium'],
-              "2");
-          user2.imageUrl = res['results'][0]['picture']['medium'];
-          userProvider.searchedUsers.add(user2);
-        }
+        UserModel user = UserModel(
+            res['results'][0]['name']['first'],
+            res['results'][0]['email'],
+            res['results'][0]['location']['state'],
+            res['results'][0]['location']['city'],
+            res['results'][0]['picture']['medium'],
+            "2");
+        user.imageUrl = res['results'][0]['picture']['medium'];
+        userProvider.searchedUsers.add(user);
+
         res = await NetworkManager.instance
             .getRequest("https://randomuser.me/api/", 'token');
-        for (var i = 0; i < 4; i++) {
-          UserModel user = UserModel(
-              res['results'][0]['name']['first'],
-              res['results'][0]['email'],
-              res['results'][0]['location']['state'],
-              res['results'][0]['location']['city'],
-              res['results'][0]['picture']['medium'],
-              "3");
-          user.imageUrl = res['results'][0]['picture']['medium'];
-          userProvider.searchedUsers.add(user);
-        }
+        user = UserModel(
+            res['results'][0]['name']['first'],
+            res['results'][0]['email'],
+            res['results'][0]['location']['state'],
+            res['results'][0]['location']['city'],
+            res['results'][0]['picture']['medium'],
+            "3");
+        user.imageUrl = res['results'][0]['picture']['medium'];
+        userProvider.searchedUsers.add(user);
+        res = await NetworkManager.instance
+            .getRequest("https://randomuser.me/api/", 'token');
+        user = UserModel(
+            res['results'][0]['name']['first'],
+            res['results'][0]['email'],
+            res['results'][0]['location']['state'],
+            res['results'][0]['location']['city'],
+            res['results'][0]['picture']['medium'],
+            "3");
+        user.imageUrl = res['results'][0]['picture']['medium'];
+        userProvider.searchedUsers.add(user);
+        res = await NetworkManager.instance
+            .getRequest("https://randomuser.me/api/", 'token');
+        user = UserModel(
+            res['results'][0]['name']['first'],
+            res['results'][0]['email'],
+            res['results'][0]['location']['state'],
+            res['results'][0]['location']['city'],
+            res['results'][0]['picture']['medium'],
+            "3");
+        user.imageUrl = res['results'][0]['picture']['medium'];
+        userProvider.searchedUsers.add(user);
+        res = await NetworkManager.instance
+            .getRequest("https://randomuser.me/api/", 'token');
+        user = UserModel(
+            res['results'][0]['name']['first'],
+            res['results'][0]['email'],
+            res['results'][0]['location']['state'],
+            res['results'][0]['location']['city'],
+            res['results'][0]['picture']['medium'],
+            "3");
+        user.imageUrl = res['results'][0]['picture']['medium'];
+        userProvider.searchedUsers.add(user);
+        res = await NetworkManager.instance
+            .getRequest("https://randomuser.me/api/", 'token');
+        user = UserModel(
+            res['results'][0]['name']['first'],
+            res['results'][0]['email'],
+            res['results'][0]['location']['state'],
+            res['results'][0]['location']['city'],
+            res['results'][0]['picture']['medium'],
+            "3");
+        user.imageUrl = res['results'][0]['picture']['medium'];
+        userProvider.searchedUsers.add(user);
+        res = await NetworkManager.instance
+            .getRequest("https://randomuser.me/api/", 'token');
+        user = UserModel(
+            res['results'][0]['name']['first'],
+            res['results'][0]['email'],
+            res['results'][0]['location']['state'],
+            res['results'][0]['location']['city'],
+            res['results'][0]['picture']['medium'],
+            "3");
+        user.imageUrl = res['results'][0]['picture']['medium'];
+        userProvider.searchedUsers.add(user);
+        res = await NetworkManager.instance
+            .getRequest("https://randomuser.me/api/", 'token');
+        user = UserModel(
+            res['results'][0]['name']['first'],
+            res['results'][0]['email'],
+            res['results'][0]['location']['state'],
+            res['results'][0]['location']['city'],
+            res['results'][0]['picture']['medium'],
+            "3");
+        user.imageUrl = res['results'][0]['picture']['medium'];
+        userProvider.searchedUsers.add(user);
+        res = await NetworkManager.instance
+            .getRequest("https://randomuser.me/api/", 'token');
+        user = UserModel(
+            res['results'][0]['name']['first'],
+            res['results'][0]['email'],
+            res['results'][0]['location']['state'],
+            res['results'][0]['location']['city'],
+            res['results'][0]['picture']['medium'],
+            "3");
+        user.imageUrl = res['results'][0]['picture']['medium'];
+        userProvider.searchedUsers.add(user);
+        res = await NetworkManager.instance
+            .getRequest("https://randomuser.me/api/", 'token');
+        user = UserModel(
+            res['results'][0]['name']['first'],
+            res['results'][0]['email'],
+            res['results'][0]['location']['state'],
+            res['results'][0]['location']['city'],
+            res['results'][0]['picture']['medium'],
+            "3");
+        user.imageUrl = res['results'][0]['picture']['medium'];
+        userProvider.searchedUsers.add(user);
+        res = await NetworkManager.instance
+            .getRequest("https://randomuser.me/api/", 'token');
+        user = UserModel(
+            res['results'][0]['name']['first'],
+            res['results'][0]['email'],
+            res['results'][0]['location']['state'],
+            res['results'][0]['location']['city'],
+            res['results'][0]['picture']['medium'],
+            "3");
+        user.imageUrl = res['results'][0]['picture']['medium'];
+        userProvider.searchedUsers.add(user);
+        res = await NetworkManager.instance
+            .getRequest("https://randomuser.me/api/", 'token');
+        user = UserModel(
+            res['results'][0]['name']['first'],
+            res['results'][0]['email'],
+            res['results'][0]['location']['state'],
+            res['results'][0]['location']['city'],
+            res['results'][0]['picture']['medium'],
+            "3");
+        user.imageUrl = res['results'][0]['picture']['medium'];
+        userProvider.searchedUsers.add(user);
+        res = await NetworkManager.instance
+            .getRequest("https://randomuser.me/api/", 'token');
+        user = UserModel(
+            res['results'][0]['name']['first'],
+            res['results'][0]['email'],
+            res['results'][0]['location']['state'],
+            res['results'][0]['location']['city'],
+            res['results'][0]['picture']['medium'],
+            "3");
+        user.imageUrl = res['results'][0]['picture']['medium'];
+        userProvider.searchedUsers.add(user);
+        res = await NetworkManager.instance
+            .getRequest("https://randomuser.me/api/", 'token');
+        user = UserModel(
+            res['results'][0]['name']['first'],
+            res['results'][0]['email'],
+            res['results'][0]['location']['state'],
+            res['results'][0]['location']['city'],
+            res['results'][0]['picture']['medium'],
+            "3");
+        user.imageUrl = res['results'][0]['picture']['medium'];
+        userProvider.searchedUsers.add(user);
+        res = await NetworkManager.instance
+            .getRequest("https://randomuser.me/api/", 'token');
+        user = UserModel(
+            res['results'][0]['name']['first'],
+            res['results'][0]['email'],
+            res['results'][0]['location']['state'],
+            res['results'][0]['location']['city'],
+            res['results'][0]['picture']['medium'],
+            "3");
+        user.imageUrl = res['results'][0]['picture']['medium'];
+        userProvider.searchedUsers.add(user);
+        res = await NetworkManager.instance
+            .getRequest("https://randomuser.me/api/", 'token');
+        user = UserModel(
+            res['results'][0]['name']['first'],
+            res['results'][0]['email'],
+            res['results'][0]['location']['state'],
+            res['results'][0]['location']['city'],
+            res['results'][0]['picture']['medium'],
+            "3");
+        user.imageUrl = res['results'][0]['picture']['medium'];
+        userProvider.searchedUsers.add(user);
       },
       context,
     );

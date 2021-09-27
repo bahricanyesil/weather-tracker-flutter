@@ -11,8 +11,3 @@ class Login {
   factory Login.fromJson(Map<String, dynamic> json) => _$LoginFromJson(json);
   Map<String, dynamic> toJson() => _$LoginToJson(this);
 }
-
-{
-  "email": email,
-  "password": password
-}
