@@ -72,6 +72,8 @@ class _SearchScreenState extends State<SearchScreen> {
   Future<void> search(String searchText) async {
     final friendProvider = Provider.of<FriendProvider>(context, listen: false);
     final userProvider = Provider.of<UserProvider>(context, listen: false);
+
+    /// Used dummy data providers since the back-end isn't deployed.
     await ServiceUtils.instance.requestHelper(
       () async {
         var res = await NetworkManager.instance
@@ -219,39 +221,10 @@ class _SearchScreenState extends State<SearchScreen> {
             "3");
         user.imageUrl = res['results'][0]['picture']['medium'];
         userProvider.searchedUsers.add(user);
-        res = await NetworkManager.instance
-            .getRequest("https://randomuser.me/api/", 'token');
-        user = UserModel(
-            res['results'][0]['name']['first'],
-            res['results'][0]['email'],
-            res['results'][0]['location']['state'],
-            res['results'][0]['location']['city'],
-            res['results'][0]['picture']['medium'],
-            "3");
-        user.imageUrl = res['results'][0]['picture']['medium'];
-        userProvider.searchedUsers.add(user);
-        res = await NetworkManager.instance
-            .getRequest("https://randomuser.me/api/", 'token');
-        user = UserModel(
-            res['results'][0]['name']['first'],
-            res['results'][0]['email'],
-            res['results'][0]['location']['state'],
-            res['results'][0]['location']['city'],
-            res['results'][0]['picture']['medium'],
-            "3");
-        user.imageUrl = res['results'][0]['picture']['medium'];
-        userProvider.searchedUsers.add(user);
-        res = await NetworkManager.instance
-            .getRequest("https://randomuser.me/api/", 'token');
-        user = UserModel(
-            res['results'][0]['name']['first'],
-            res['results'][0]['email'],
-            res['results'][0]['location']['state'],
-            res['results'][0]['location']['city'],
-            res['results'][0]['picture']['medium'],
-            "3");
-        user.imageUrl = res['results'][0]['picture']['medium'];
-        userProvider.searchedUsers.add(user);
+        userProvider.searchedUsers = userProvider.searchedUsers
+            .where((element) =>
+                element.userName.toLowerCase().contains(searchText))
+            .toList();
       },
       context,
     );

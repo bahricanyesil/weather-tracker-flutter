@@ -117,6 +117,11 @@ class _HomeScreenState extends State<HomeScreen> {
     final friendProv = Provider.of<FriendProvider>(context, listen: false);
     final participanceProv =
         Provider.of<ParticipanceProvider>(context, listen: false);
+    final int foundMeeting = participanceProv.meetings
+        .indexWhere((el) => el.uniqueId == meeting?.uniqueId);
+    if (foundMeeting != -1) {
+      participanceProv.meetings[foundMeeting] = meeting!;
+    }
     // await ServiceUtils.instance.requestHelper(
     //   () {
     //      if(isEdit) {
@@ -143,6 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
       showChooseDialog(context, 'choose_friends'.translate, '', setValue,
           userNames, true, save,
           initialSelected: chosenUsers);
+      setState(() {});
     }
   }
 
@@ -160,6 +166,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 .indexWhere((element) => element.userName == selectedUsers[i])]
             .uniqueId);
       }
+      final participanceProvider =
+          Provider.of<ParticipanceProvider>(context, listen: false);
+      participanceProvider.meetings.add(MeetingModel(
+          _controllers[0].text, _controllers[1].text, UniqueKey().toString()));
       // await ServiceUtils.instance.requestHelper(
       //   () => meetingProv.createMeeting(
       //     _controllers[0].text,
@@ -168,6 +178,7 @@ class _HomeScreenState extends State<HomeScreen> {
       //   ),
       //   context,
       // );
+      setState(() {});
       if (Utils.instance.errorDialogHelper(meetingProv, context)) {
         Navigator.of(context).pop();
       }
@@ -272,8 +283,9 @@ class _HomeScreenState extends State<HomeScreen> {
   String getImagePath() {
     if (weather.condition.toLowerCase() == 'sunny') {
       return 'assets/images/sunny.png';
+    } else {
+      return 'assets/images/clouds.png';
     }
-    return '';
   }
 
   Widget getCityCountry() {

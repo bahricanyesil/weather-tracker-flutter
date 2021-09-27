@@ -6,28 +6,25 @@ import '../core_shelf.dart';
 class FriendProvider extends ChangeNotifier {
   UserModel user = UserModel("fake", "fake", "fake", "fake", "fake", "fake");
   String errorMessage = '';
-  List<UserModel> friendsOfUser = [
-    UserModel("fake", "fake", "fake", "fake", "fake", "fake",
-        imageUrl: "https://randomuser.me/api/portraits/med/women/31.jpg"),
-    UserModel("fake", "fake", "fake", "fake", "fake", "fake",
-        imageUrl: "https://randomuser.me/api/portraits/med/women/31.jpg"),
-    UserModel("fake", "fake", "fake", "fake", "fake", "fake",
-        imageUrl: "https://randomuser.me/api/portraits/med/women/31.jpg"),
-    UserModel("fake", "fake", "fake", "fake", "fake", "fake",
-        imageUrl: "https://randomuser.me/api/portraits/med/women/31.jpg"),
-    UserModel("fake", "fake", "fake", "fake", "fake", "fake",
-        imageUrl: "https://randomuser.me/api/portraits/med/women/31.jpg"),
-    UserModel("fake", "fake", "fake", "fake", "fake", "fake",
-        imageUrl: "https://randomuser.me/api/portraits/med/women/31.jpg"),
-    UserModel("fake", "fake", "fake", "fake", "1", "1",
-        imageUrl: "https://randomuser.me/api/portraits/med/women/31.jpg"),
-  ];
+  List<UserModel> friendsOfUser = List.generate(
+      15,
+      (int index) => UserModel(
+          "fakename$index",
+          "fakeemail$index",
+          "fakecountry$index",
+          "fakecity$index",
+          "fakeid$index",
+          "faketoken$index",
+          imageUrl: "https://randomuser.me/api/portraits/med/women/31.jpg"));
+
   List<UserModel> receivedRequests = [
-    UserModel("fake", "fake", "fake", "fake", "2", "2",
+    UserModel("fakename10", "fakeemail10", "fakecountry10", "fakecity10",
+        "fakeid10", "faketoken10",
         imageUrl: "https://randomuser.me/api/portraits/med/women/31.jpg"),
   ];
   List<UserModel> sentRequests = [
-    UserModel("fake", "fake", "fake", "fake", "3", "3",
+    UserModel("fakename8", "fakeemail8", "fakecountry8", "fakecity8", "fakeid8",
+        "faketoken8",
         imageUrl: "https://randomuser.me/api/portraits/med/women/31.jpg"),
   ];
 

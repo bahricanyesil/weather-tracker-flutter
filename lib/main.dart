@@ -6,6 +6,8 @@ import 'core/core_shelf.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  /// NOTE:
+  /// Every part of this app, I used dummy data APIs/providers since the back-end isn't deployed.
   await LocalManager.prefrencesInit();
   var languageProvider = LanguageProvider();
   await languageProvider.fetchLocale();
